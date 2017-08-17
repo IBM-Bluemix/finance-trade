@@ -9,9 +9,15 @@
     });
   });
 
-  app.controller('PortfolioController', ['$scope', '$state', '$stateParams',
-    function($scope, $state, $stateParams) {
+  app.controller('PortfolioController', ['$scope', '$state', '$stateParams', 'PortfolioService',
+    function($scope, $state, $stateParams, PortfolioService) {
+      console.log('PortfolioController()');
       var controller = this;
+
+      PortfolioService.getPortfolios().then(function(portfolios) {
+        console.log(portfolios);
+        $scope.portfolios = portfolios;
+      });
     }]);
 
 })();

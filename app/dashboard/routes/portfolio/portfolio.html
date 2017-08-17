@@ -1,7 +1,15 @@
-<div ng-controller="PortfolioController as controller">
+<div ng-controller="PortfolioController as controller" layout="column" layout-fill>
   <div class="page-header" layout="row">
     <span class="page-title">Portfolio</span>
     <span flex></span>
-    <md-button>Open...</md-button>
   </div>
+
+  <md-tabs flex>
+    <md-tab label="{{portfolio.name}}" ng-repeat="portfolio in portfolios">
+      <md-content>
+        table for {{portfolio.name}}
+      </md-content>
+    </md-tab>
+  </md-tabs>
+
 </div>

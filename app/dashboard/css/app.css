@@ -1,4 +1,15 @@
 /**
+ * TOOLBAR
+ */
+.md-title {
+}
+
+.md-subtitle {
+  font-size: 16px;
+  height: 16px;
+}
+
+/**
  * SIDEBAR
  */
 .sidebar {
@@ -35,6 +46,7 @@
 .page-header {
   border-bottom: 1px solid;
   padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .page-title {

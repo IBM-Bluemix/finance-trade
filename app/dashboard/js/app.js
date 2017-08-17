@@ -9,7 +9,7 @@
   ]);
 
   app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/portfolio");
+    $urlRouterProvider.otherwise('/about');
   });
 
 })();

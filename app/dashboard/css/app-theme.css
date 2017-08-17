@@ -10,24 +10,24 @@ md-toolbar {
  */
 .sidebar {
   background-color: #2f3f4d;
-  color: #969ea5;
+  color: #ffffff;
 }
 
 .sidebar-user-avatar {
-  color: #969ea5 !important;
+  color: #ffffff !important;
 }
 
 .sidebar-item md-icon {
-  color: #969ea5 !important;
+  color: #ffffff !important;
 }
 
 .sidebar-item a {
-  color: #969ea5;
+  color: #ffffff;
 }
 
 .sidebar-item > a.active md-icon,
 .sidebar-item > a.active {
-  background: #969ea5 !important;
+  background: #ffffff !important;
   color: #2f3f4d !important;
 }
 
