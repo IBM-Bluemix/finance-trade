@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Investment Insights for Asset Managers</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Viewport settings-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" type="text/css"> -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/app.css" type="text/css">
+  <link rel="stylesheet" href="css/app-theme.css" type="text/css">
+</head>
+<body>
+<div ng-app="app">
+
+  <div layout="column" layout-fill>
+    <header>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <span class="title md-title">
+            Investment Insights for Asset Managers
+          </span>
+          <span flex></span>
+          <md-button class="md-icon-button" href="https://github.com/IBM-Bluemix/investment-insights-for-asset-managers">
+            <md-icon md-svg-src="images/github-circle.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+    </header>
+
+    <div layout="row" flex>
+      <div class="sidebar">
+        <div class="sidebar-user" layout="column" layout-align="center center">
+          <md-icon class="sidebar-user-avatar">face</md-icon>
+          <span class="sidebar-user-name">John Smith</span>
+        </div>
+
+        <div class="sidebar-item">
+          <a class="md-button md-ink-ripple" ui-sref="portfolio()" ui-sref-active="active">
+            <md-icon>card_travel</md-icon>
+            Portfolio
+          </a>
+        </div>
+
+        <div class="sidebar-item">
+          <a class="md-button md-ink-ripple" ui-sref="news()" ui-sref-active="active">
+            <md-icon>subject</md-icon>
+            News Analysis
+          </a>
+        </div>
+
+        <div class="sidebar-item">
+          <a class="md-button md-ink-ripple" ui-sref="simulation()" ui-sref-active="active">
+            <md-icon>show_chart</md-icon>
+            Simulation
+          </a>
+        </div>
+      </div>
+      <div class="main" flex>
+        <ui-view></ui-view>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="routes/portfolio/portfolio.js"></script>
+<script type="text/javascript" src="routes/news/news.js"></script>
+<script type="text/javascript" src="routes/simulation/simulation.js"></script>
+</body>
+</html>

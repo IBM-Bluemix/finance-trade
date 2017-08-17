@@ -1,0 +1,64 @@
+/**
+ * SIDEBAR
+ */
+.sidebar {
+  width: 250px;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.sidebar-user {
+  margin-bottom: 40px;
+}
+
+.sidebar-user-avatar {
+  font-size: 128px;
+  width: 128px;
+  height: 128px;
+}
+
+.sidebar-item a {
+  display: block;
+  text-align: left;
+}
+
+/**
+ * MAIN
+ */
+.main {
+  padding: 20px;
+}
+
+/**
+ * PAGE
+ */
+.page-header {
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+}
+
+.page-title {
+  font-size: 30px;
+}
+
+/**
+ * FOOTER
+ */
+footer a {
+  text-decoration: none;
+  border: 0;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid;
+  font-size: 12px;
+}

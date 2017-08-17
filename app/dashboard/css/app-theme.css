@@ -1,0 +1,64 @@
+/**
+ * TOOLBAR
+ */
+md-toolbar {
+  background-color: #000 !important;
+}
+
+/**
+ * SIDEBAR
+ */
+.sidebar {
+  background-color: #2f3f4d;
+  color: #969ea5;
+}
+
+.sidebar-user-avatar {
+  color: #969ea5 !important;
+}
+
+.sidebar-item md-icon {
+  color: #969ea5 !important;
+}
+
+.sidebar-item a {
+  color: #969ea5;
+}
+
+.sidebar-item > a.active md-icon,
+.sidebar-item > a.active {
+  background: #969ea5 !important;
+  color: #2f3f4d !important;
+}
+
+/**
+ * MAIN
+ */
+.main {
+  background-color: #ebebeb;
+}
+
+/**
+ *
+ */
+.page-header {
+  border-color: #2f3f4d;
+}
+
+/**
+ * FOOTER
+ */
+footer a {
+  color: #ebebeb;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #ebebeb;
+}
+
+footer {
+  background-color: #2f3f4d;
+  color: #ebebeb;
+  border-top-color: 1px solid rgba(0, 0, 0, .075);
+}
