@@ -9,9 +9,11 @@
     });
   });
 
-  app.controller('NewsController', ['$scope', '$state', '$stateParams',
-    function($scope, $state, $stateParams) {
+  app.controller('NewsController', ['$scope', '$state', '$stateParams', 'PortfolioService',
+    function($scope, $state, $stateParams, PortfolioService) {
       var controller = this;
+
+      $scope.availableRiskFactors = PortfolioService.getRiskFactors();
     }]);
 
 })();

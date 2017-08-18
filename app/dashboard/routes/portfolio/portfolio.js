@@ -24,7 +24,7 @@
       });
 
       $scope.selectPortfolio = function(portfolio) {
-        if (portfolio == $scope.selectedPortfolio) {
+        if (portfolio === $scope.selectedPortfolio) {
           return;
         }
         console.log('Selecting', portfolio.name);

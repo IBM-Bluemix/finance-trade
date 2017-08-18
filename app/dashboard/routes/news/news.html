@@ -1,6 +1,25 @@
-<div ng-controller="NewsController as controller" flex>
+<div ng-controller="NewsController as controller" layout="column" flex>
   <div class="page-header" layout="row">
     <span class="page-title">News Analysis</span>
     <span flex></span>
   </div>
+
+  <div class="page-body" flex>
+    <p>
+      Use this panel to find recent and relevant news articles about a risk factor.
+    </p>
+
+    <div layout="row" layout-align="start center">
+      <span>
+        Risk Factor
+      </span>
+      <md-select name="riskFactor" ng-model="selectedRiskFactor" required>
+        <md-option value="{{riskFactor.search}}" ng-repeat="riskFactor in availableRiskFactors">{{riskFactor.name}}</md-option>
+      </md-select>
+    </div>
+
+    <md-button class="md-raised">Find articles...</md-button>
+
+  </div>
+
 </div>
