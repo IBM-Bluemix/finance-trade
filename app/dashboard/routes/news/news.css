@@ -9,3 +9,8 @@
 .news-list {
   padding: 0;
 }
+
+.article-sentiment-tag {
+  border-radius: 10px;
+  padding: 4px;
+}

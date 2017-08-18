@@ -11,7 +11,7 @@
       "sentiment": {
         "document": {
           "score": 0.56781,
-          "label": "positive"
+          "label": "neutral"
         }
       }
     },
