@@ -4,7 +4,8 @@
   app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('portfolio', {
       url: '/portfolio',
-      templateUrl: 'routes/portfolio/portfolio.html'
+      templateUrl: 'routes/portfolio/portfolio.html',
+      controller: 'PortfolioController as controller'
     });
   });
 

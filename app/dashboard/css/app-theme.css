@@ -60,3 +60,17 @@ md-toolbar {
 .page-body {
   background-color: #ffffff;
 }
+
+/**
+ * NEWS PAGE
+ */
+.article-sentiment-positive {
+  background-color: #4bb60c !important;
+}
+
+.article-sentiment-neutral {
+}
+
+.article-sentiment-negative {
+  background-color: #de6b6b !important;
+}

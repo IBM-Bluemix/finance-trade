@@ -10,7 +10,7 @@
         console.log('Looking for', riskFactor, horizon);
         var deferred = $q.defer();
         $http.get('api/news.json').then(function(response) {
-          deferred.resolve(response.data.portfolios);
+          deferred.resolve(response.data);
         }).catch(function(err) {
           console.log(err);
           deferred.reject();

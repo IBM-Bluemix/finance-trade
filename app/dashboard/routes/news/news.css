@@ -5,3 +5,7 @@
 .news-filter md-select {
   margin: 0;
 }
+
+.news-list {
+  padding: 0;
+}

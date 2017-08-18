@@ -1,4 +1,4 @@
-<div ng-controller="NewsController as controller" layout="column" flex>
+<div class="news" layout="column" flex>
   <div class="page-header" layout="row">
     <span class="page-title">News Analysis</span>
     <span flex></span>
@@ -10,9 +10,9 @@
 
   <div class="page-body news-filter">
     <div layout="row" layout-align="start center">
-      <span>
-        Risk Factor
-      </span>
+      <div>
+        Look for articles related to the risk Factor:
+      </div>
       <md-select name="riskFactor" ng-model="selectedRiskFactor" required>
         <md-option ng-value="riskFactor" ng-repeat="riskFactor in availableRiskFactors">{{riskFactor.name}}</md-option>
       </md-select>
@@ -30,5 +30,20 @@
 
     <md-button class="md-raised" ng-click="findArticles()">Find articles...</md-button>
   </div>
+
+  <md-content class="page-body" flex ng-if="articles.results">
+    <md-list class="news-list md-dense">
+      <md-subheader>Showing {{articles.results.length}} of {{articles.matching_results}} matching documents</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="article in articles.results" ng-click="null">
+        <md-icon ng-if="article.enriched_text.sentiment.document.label ==='positive'" class="md-avatar-icon article-sentiment-positive">sentiment_very_satisfied</md-icon>
+        <md-icon ng-if="article.enriched_text.sentiment.document.label==='neutral'" class="md-avatar-icon article-sentiment-neutral">sentiment_very_neutral</md-icon>
+        <md-icon ng-if="article.enriched_text.sentiment.document.label==='negative'" class="md-avatar-icon article-sentiment-negative">sentiment_very_dissatisfied</md-icon>
+        <div class="md-list-item-text" layout="column">
+          <h3><a href="{{article.url}}">{{article.title}}</a></h3>
+          <h4>{{article.publication_date | date:'short'}} | {{article.host}} | Overall score {{article.score}} | Sentiment: {{article.enriched_text.sentiment.document.label}} ({{article.enriched_text.sentiment.document.score}})</h4>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
 
 </div>

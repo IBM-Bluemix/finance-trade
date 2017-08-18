@@ -5,7 +5,7 @@
     $stateProvider.state('news', {
       url: '/news',
       templateUrl: 'routes/news/news.html',
-      css: 'routes/news/news.css'
+      controller: 'NewsController as controller'
     });
   });
 
@@ -30,7 +30,12 @@
 
       $scope.findArticles = function() {
         NewsService.findArticles($scope.selectedRiskFactor, $scope.selectedHorizon)
+          .then(function(articles) {
+            console.log('Found', articles);
+            $scope.articles = articles;
+          });
       };
+
     }]);
 
 })();
