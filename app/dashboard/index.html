@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/app-theme.css" type="text/css">
 </head>
 <body>
-
   <div ng-app="app" ng-cloak layout="column" layout-fill class="app-container">
     <header>
       <md-toolbar>
@@ -69,6 +68,12 @@
       </div>
       <div flex ui-view layout="row"></div>
     </div>
+
+    <spinner>
+      <div id="loadingProgress" layout="row" layout-align="center center">
+        <md-progress-circular md-diameter="96"></md-progress-circular>
+      </div>
+    </spinner>
   </div>
 
 <!-- Angular Material requires Angular.js Libraries -->
