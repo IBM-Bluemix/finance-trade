@@ -4,14 +4,12 @@
     <span flex></span>
   </div>
 
-  <div class="page-body">
-    <p>
-      The following shows your available portfolios.
-      They are maintained by the <a href="https://console.bluemix.net/catalog/services/fss-portfolio-service" target="_blank">Investment Portfolio</a> service.
-    </p>
+  <div class="page-description">
+    The following shows your available portfolios.
+    They are maintained by the <a href="https://console.bluemix.net/catalog/services/fss-portfolio-service" target="_blank">Investment Portfolio</a> service.
   </div>
 
-  <div class="page-body portfolio-body" flex>
+  <div class="page-body" flex>
     <md-tabs>
       <md-tab label="{{portfolio.name}}"
         ng-repeat="portfolio in portfolios"

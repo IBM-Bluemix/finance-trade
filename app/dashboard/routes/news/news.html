@@ -4,22 +4,31 @@
     <span flex></span>
   </div>
 
-  <div class="page-body" flex>
-    <p>
-      Use this panel to find recent and relevant news articles about a risk factor.
-    </p>
+  <div class="page-description">
+    Use this panel to find recent and relevant news articles about a risk factor.
+  </div>
 
+  <div class="page-body news-filter">
     <div layout="row" layout-align="start center">
       <span>
         Risk Factor
       </span>
       <md-select name="riskFactor" ng-model="selectedRiskFactor" required>
-        <md-option value="{{riskFactor.search}}" ng-repeat="riskFactor in availableRiskFactors">{{riskFactor.name}}</md-option>
+        <md-option ng-value="riskFactor" ng-repeat="riskFactor in availableRiskFactors">{{riskFactor.name}}</md-option>
       </md-select>
     </div>
 
-    <md-button class="md-raised">Find articles...</md-button>
+    <div>
+      Consider articles in the last
+      <md-button md-no-ink class="group"
+        ng-click="selectHorizon(horizon)"
+        ng-class="{selected: horizon === selectedHorizon, groupFirst: $first, groupLast: $last}"
+        ng-repeat="horizon in horizons">
+        {{horizon.display}}
+      </md-button>
+    </div>
 
+    <md-button class="md-raised" ng-click="findArticles()">Find articles...</md-button>
   </div>
 
 </div>

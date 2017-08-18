@@ -19,6 +19,25 @@
   height: 16px;
 }
 
+.md-button.group {
+  background-color: #dfdfdf;
+  margin: 0;
+}
+
+.md-button.selected {
+  background-color: #5555ff;
+}
+
+.md-button.groupFirst {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.md-button.groupLast {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 /**
  * SIDEBAR
  */
@@ -55,7 +74,8 @@
   margin: 20px;
 }
 
-.page-body {
+.page-body,
+.page-description {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
