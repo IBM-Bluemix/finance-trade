@@ -7,18 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
-  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" type="text/css"> -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-
   <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="css/app.css" type="text/css">
+  <link rel="stylesheet" href="routes/portfolio/portfolio.css" type="text/css">
   <link rel="stylesheet" href="css/app-theme.css" type="text/css">
 </head>
 <body>
-<div ng-app="app">
+<div ng-app="app" ng-cloak>
 
-  <div layout="column" layout-fill>
+  <div layout="column" layout-fill class="app-container">
     <header>
       <md-toolbar>
         <div class="md-toolbar-tools">
@@ -31,7 +31,7 @@
       </md-toolbar>
     </header>
 
-    <div layout="row" flex>
+    <div layout="row" layout-fill flex>
       <div class="sidebar" layout="column">
         <div class="sidebar-user" layout="column" layout-align="center center">
           <md-icon class="sidebar-user-avatar">face</md-icon>
@@ -67,7 +67,6 @@
             About
           </a>
         </div>
-
       </div>
       <div class="main" flex>
         <ui-view></ui-view>
@@ -82,10 +81,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
 
 <!-- Angular Material Library -->
 <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+
+<script type="text/javascript" src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
 
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/portfolio.service.js"></script>

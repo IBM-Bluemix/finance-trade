@@ -4,12 +4,31 @@
     <span flex></span>
   </div>
 
-  <md-tabs flex>
-    <md-tab label="{{portfolio.name}}" ng-repeat="portfolio in portfolios">
-      <md-content>
-        table for {{portfolio.name}}
-      </md-content>
-    </md-tab>
-  </md-tabs>
+  <div class="page-body portfolio-body" flex>
+    <md-tabs>
+      <md-tab label="{{portfolio.name}}"
+        ng-repeat="portfolio in portfolios"
+        md-on-select="selectPortfolio(portfolio)">
+      </md-tab>
+    </md-tabs>
 
+    <md-table-container>
+      <table md-table md-row-select="true" ng-model="selectedHoldings">
+        <thead md-head md-order="sortOrder">
+          <tr md-row>
+            <th md-column md-order-by="companyName"><span>Company</span></th>
+            <th md-column md-order-by="asset"><span>Asset</span></th>
+            <th md-column md-order-by="quantity" md-numeric>Shares QTY</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-auto-select ng-repeat="holding in selectedPortfolio.holdings | orderBy:sortOrder">
+            <td md-cell>{{holding.companyName}}</td>
+            <td md-cell>{{holding.asset}}</td>
+            <td md-cell>{{holding.quantity | number: 0}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+  </div>
 </div>

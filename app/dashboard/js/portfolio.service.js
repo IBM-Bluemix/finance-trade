@@ -15,6 +15,16 @@
           deferred.reject();
         });
         return deferred.promise;
+      },
+      getHoldings: function(portfolio) {
+        var deferred = $q.defer();
+        $http.get('api/holdings.json').then(function(response) {
+          deferred.resolve(response.data.holdings[0].holdings);
+        }).catch(function(err) {
+          console.log(err);
+          deferred.reject();
+        });
+        return deferred.promise;
       }
     };
   }

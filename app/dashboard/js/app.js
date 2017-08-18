@@ -5,7 +5,7 @@
   var app = angular.module('app', [
     'ngMaterial',
     'ui.router',
-    'angularCSS',
+    'md.data.table',
   ]);
 
   app.config(function ($stateProvider, $urlRouterProvider) {

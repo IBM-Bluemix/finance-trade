@@ -1,3 +1,7 @@
+body {
+  background-color: #ebebeb;
+}
+
 /**
  * TOOLBAR
  */
@@ -35,7 +39,6 @@ md-toolbar {
  * MAIN
  */
 .main {
-  background-color: #ebebeb;
 }
 
 /**
@@ -43,6 +46,13 @@ md-toolbar {
  */
 .page-header {
   border-color: #2f3f4d;
+}
+
+/**
+ * PORTFOLIO PAGE
+ */
+.portfolio-body {
+  background-color: #ffffff;
 }
 
 /**

@@ -33,44 +33,34 @@
   text-align: left;
 }
 
+.app-container {
+  overflow: hidden;
+}
+
 /**
  * MAIN
  */
 .main {
-  padding: 20px;
 }
 
 /**
  * PAGE
  */
 .page-header {
+  margin: 20px;
+}
+
+.page-body {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.page-header {
   border-bottom: 1px solid;
   padding-bottom: 20px;
-  margin-bottom: 20px;
 }
 
 .page-title {
   font-size: 30px;
-}
-
-/**
- * FOOTER
- */
-footer a {
-  text-decoration: none;
-  border: 0;
-}
-
-footer a:hover {
-  text-decoration: none;
-}
-
-footer {
-  text-align: center;
-  height: 40px;
-  line-height: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-top: 1px solid;
-  font-size: 12px;
 }

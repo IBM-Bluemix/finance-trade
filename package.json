@@ -13,6 +13,7 @@
     "angular-aria": "^1.6.5",
     "angular-auth0": "^2.0.0",
     "angular-material": "^1.1.4",
+    "angular-material-data-table": "^0.10.10",
     "angular-ui-bootstrap": "^2.5.0",
     "auth0-js": "^8.8.0",
     "bcrypt-nodejs": "0.0.3",
