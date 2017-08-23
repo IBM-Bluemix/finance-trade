@@ -15,6 +15,7 @@
 
       $scope.state = StateService;
       $scope.selectedHoldings = [];
+      $scope.simulationResults = StateService.get('simulation');
 
       $scope.hasNews = function() {
         var news =  StateService.get('news');
@@ -71,6 +72,7 @@
           $scope.simulationResults.profitLoss = ((($scope.simulationResults.stressedPrice / $scope.simulationResults.currentPrice)-1)*100);
 
           console.log('Prepared simulation results', $scope.simulationResults);
+          StateService.set('simulation', $scope.simulationResults);
         });
       }
     }]);
