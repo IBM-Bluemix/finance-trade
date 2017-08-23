@@ -1,15 +1,15 @@
 <div layout="column" flex>
-  <div class="page-header" layout="row">
+  <div class="page-header" flex="none" layout="row">
     <span class="page-title">Portfolio</span>
     <span flex></span>
   </div>
 
-  <div class="page-description">
+  <div class="page-description" flex="none">
     The following shows your available portfolios.
     They are maintained by the <a href="https://console.bluemix.net/catalog/services/fss-portfolio-service" target="_blank">Investment Portfolio</a> service.
   </div>
 
-  <div class="page-body" flex>
+  <div class="page-body">
     <md-tabs>
       <md-tab label="{{portfolio.name}}"
         ng-repeat="portfolio in portfolios"

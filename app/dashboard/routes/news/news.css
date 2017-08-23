@@ -2,8 +2,16 @@
   padding: 20px;
 }
 
+.news-filter > div {
+  margin-bottom: 10px;
+}
+
 .news-filter md-select {
   margin: 0;
+}
+
+#riskFactor {
+  margin-left: 10px;
 }
 
 .news-list {

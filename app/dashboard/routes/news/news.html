@@ -1,10 +1,10 @@
 <div class="news" layout="column" flex>
-  <div class="page-header" layout="row">
+  <div class="page-header" flex="none" layout="row">
     <span class="page-title">News Analysis</span>
     <span flex></span>
   </div>
 
-  <div class="page-description">
+  <div class="page-description" flex="none">
     Use this panel to find recent and relevant news articles about a risk factor.
     Articles are retrieved from <a href="https://console.bluemix.net/catalog/services/discovery" target="_blank">Watson Discovery</a> News collection.
   </div>
@@ -14,7 +14,7 @@
       <div>
         Look for articles related to the risk Factor:
       </div>
-      <md-select name="riskFactor" ng-model="selectedRiskFactor" required>
+      <md-select id="riskFactor" ng-model="selectedRiskFactor" required>
         <md-option ng-value="riskFactor" ng-repeat="riskFactor in availableRiskFactors">{{riskFactor.name}}</md-option>
       </md-select>
     </div>
@@ -32,7 +32,7 @@
     <md-button class="md-raised" ng-click="findArticles()">Find articles...</md-button>
   </div>
 
-  <md-content class="page-body" flex ng-if="articles.results">
+  <div class="page-body" ng-if="articles.results">
     <md-subheader>
       Showing {{articles.results.length}} of {{articles.matching_results}} matching documents
       <span class="article-sentiment-tag article-sentiment-negative">{{articles.counts.negative}} negative</span>
@@ -50,6 +50,6 @@
         </div>
       </md-list-item>
     </md-list>
-  </md-content>
+  </div>
 
 </div>

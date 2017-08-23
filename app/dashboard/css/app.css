@@ -42,7 +42,7 @@
  * SIDEBAR
  */
 .sidebar {
-  width: 250px;
+  min-width: 250px;
   font-size: 18px;
   padding-top: 20px;
   overflow: scroll;
@@ -65,6 +65,10 @@
 
 .app-container {
   overflow: hidden;
+}
+
+.main {
+  overflow: scroll;
 }
 
 /**
