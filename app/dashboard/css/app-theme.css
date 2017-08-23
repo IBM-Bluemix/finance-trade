@@ -1,5 +1,6 @@
 body {
-  background-color: #ebebeb;
+  background-color: #f9fafc;
+  color: #919bb1;
 }
 
 /**
@@ -18,50 +19,50 @@ body {
  * TOOLBAR
  */
 md-toolbar {
-  background-color: #000 !important;
+  background-color: #9caab8 !important;
 }
 
 /**
  * SIDEBAR
  */
 .sidebar {
-  background-color: #2f3f4d;
-  color: #ffffff;
+  background-color: #f4f9fc;
+  color: #929cb4;
 }
 
 .sidebar-user-avatar {
-  color: #ffffff !important;
+  color: #929cb4 !important;
 }
 
 .sidebar-item md-icon {
-  color: #ffffff !important;
+  color: #929cb4 !important;
 }
 
 .sidebar-item a {
-  color: #ffffff;
+  color: #929cb4;
 }
 
 .sidebar-item > a.active md-icon,
 .sidebar-item > a.active {
-  background: #ffffff !important;
-  color: #2f3f4d !important;
+  background: #929cb4 !important;
+  color: #ffffff !important;
 }
 
 .badge {
-  background-color: #ffffff;
-  color: #2f3f4d;
+  background-color: #929cb4;
+  color: #ffffff;
 }
 
 .active > .badge {
-  background-color: #2f3f4d;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #929cb4;
 }
 
 /**
  *
  */
 .page-header {
-  border-color: #2f3f4d;
+  border-color: #9caab8;
 }
 
 /**

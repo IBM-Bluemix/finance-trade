@@ -9,7 +9,7 @@
     Articles are retrieved from <a href="https://console.bluemix.net/catalog/services/discovery" target="_blank">Watson Discovery</a> News collection.
   </div>
 
-  <div class="page-body news-filter">
+  <div class="page-body news-filter" md-whiteframe="10">
     <div layout="row" layout-align="start center">
       <div>
         Look for articles related to the risk Factor:
@@ -29,10 +29,10 @@
       </md-button>
     </div>
 
-    <md-button class="md-raised" ng-click="findArticles()">Find articles...</md-button>
+    <md-button class="md-raised md-primary" ng-click="findArticles()">Find articles...</md-button>
   </div>
 
-  <div class="page-body" ng-if="articles.results">
+  <div class="page-body" ng-if="articles.results" md-whiteframe="4">
     <md-subheader>
       Showing {{articles.results.length}} of {{articles.matching_results}} matching documents
       <span class="article-sentiment-tag article-sentiment-negative">{{articles.counts.negative}} negative</span>
