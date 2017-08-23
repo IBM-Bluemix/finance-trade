@@ -40,7 +40,7 @@
       <span class="article-sentiment-tag article-sentiment-neutral">{{articles.counts.neutral}} neutral</span>
     </md-subheader>
     <md-list class="news-list md-dense">
-      <md-list-item class="md-3-line" ng-repeat="article in articles.results" ng-click="null">
+      <md-list-item class="md-3-line" ng-repeat="article in articles.results">
         <md-icon ng-if="article.enriched_text.sentiment.document.label ==='positive'" class="md-avatar-icon article-sentiment-positive">sentiment_very_satisfied</md-icon>
         <md-icon ng-if="article.enriched_text.sentiment.document.label==='neutral'" class="md-avatar-icon article-sentiment-neutral">sentiment_neutral</md-icon>
         <md-icon ng-if="article.enriched_text.sentiment.document.label==='negative'" class="md-avatar-icon article-sentiment-negative">sentiment_very_dissatisfied</md-icon>
