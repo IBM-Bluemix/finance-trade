@@ -47,6 +47,16 @@ md-toolbar {
   color: #2f3f4d !important;
 }
 
+.badge {
+  background-color: #ffffff;
+  color: #2f3f4d;
+}
+
+.active > .badge {
+  background-color: #2f3f4d;
+  color: #ffffff;
+}
+
 /**
  *
  */

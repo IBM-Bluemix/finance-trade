@@ -63,6 +63,18 @@
   text-align: left;
 }
 
+.badge {
+  border-radius: 16px;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 16px;
+  max-height: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .app-container {
   overflow: hidden;
 }

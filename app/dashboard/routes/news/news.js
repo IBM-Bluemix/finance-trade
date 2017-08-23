@@ -9,20 +9,19 @@
     });
   });
 
-  app.controller('NewsController', ['$scope', '$state', '$stateParams', 'PortfolioService', 'NewsService',
-    function($scope, $state, $stateParams, PortfolioService, NewsService) {
+  var horizons = [
+    { display: "24 hours", value: 24 },
+    { display: "48 hours", value: 48 },
+    { display: "7 days", value: 7 },
+    { display: "28 days", value: 28 },
+  ];
+
+  app.controller('NewsController', ['$scope', '$state', '$stateParams', 'PortfolioService', 'NewsService', 'StateService',
+    function($scope, $state, $stateParams, PortfolioService, NewsService, StateService) {
       var controller = this;
 
       $scope.availableRiskFactors = PortfolioService.getRiskFactors();
-      $scope.selectedRiskFactor = $scope.availableRiskFactors[0];
-
-      $scope.horizons = [
-        { display: "24 hours", value: 24 },
-        { display: "48 hours", value: 48 },
-        { display: "7 days", value: 7 },
-        { display: "28 days", value: 28 },
-      ];
-      $scope.selectedHorizon = $scope.horizons[0];
+      $scope.horizons = horizons;
 
       $scope.selectHorizon = function(horizon) {
         $scope.selectedHorizon = horizon;
@@ -33,9 +32,17 @@
           .then(function(articles) {
             console.log('Found', articles);
             $scope.articles = articles;
+
+            StateService.set('news.riskFactor', $scope.selectedRiskFactor);
+            StateService.set('news.horizon', $scope.selectedHorizon);
+            StateService.set('news', articles);
           });
       };
 
+      // restore view data
+      $scope.articles = StateService.get('news');
+      $scope.selectedRiskFactor = StateService.get('news.riskFactor') || $scope.availableRiskFactors[0];
+      $scope.selectedHorizon = StateService.get('news.horizon') || $scope.horizons[0];
     }]);
 
 })();

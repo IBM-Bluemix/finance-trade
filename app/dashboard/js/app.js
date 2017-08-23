@@ -32,4 +32,11 @@
     $urlRouterProvider.otherwise('/about');
   });
 
+  app.controller('SidebarController', ['$scope', 'StateService',
+    function($scope, StateService) {
+      console.log('SidebarController()');
+
+      $scope.state = StateService;
+    }]);
+
 })();
