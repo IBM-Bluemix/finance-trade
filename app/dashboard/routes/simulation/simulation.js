@@ -48,13 +48,27 @@
             }
           });
 
-          $scope.simulationResults = portfolio.holdings.map(function(holding) {
+          $scope.simulationResults = {}
+
+          $scope.simulationResults.holdings = portfolio.holdings.map(function(holding) {
             var result = JSON.parse(JSON.stringify(holding));
             result.currentPrice = instrumentIdToSimulation[result.instrumentId].currentPrice;
             result.stressedPrice = instrumentIdToSimulation[result.instrumentId].stressedPrice;
             result.profitLoss = (((parseFloat(result.stressedPrice) / parseFloat(result.currentPrice))-1)*100);
             return result;
           });
+
+          $scope.simulationResults.currentPrice =
+            $scope.simulationResults.holdings.reduce(function(sum, holding) {
+              return sum + (holding.quantity * parseFloat(holding.currentPrice));
+            }, 0);
+
+          $scope.simulationResults.stressedPrice =
+            $scope.simulationResults.holdings.reduce(function(sum, holding) {
+              return sum + (holding.quantity * parseFloat(holding.stressedPrice));
+            }, 0);
+
+          $scope.simulationResults.profitLoss = ((($scope.simulationResults.stressedPrice / $scope.simulationResults.currentPrice)-1)*100);
 
           console.log('Prepared simulation results', $scope.simulationResults);
         });

@@ -35,7 +35,7 @@
     <md-button class="md-raised" ng-click="runSimulation()" ng-hide="!hasNews()">Run simulation...</md-button>
   </div>
 
-  <div class="page-body">
+  <div class="page-body" ng-if="simulationResults.holdings">
     <md-table-container>
       <table md-table md-row-select="true" ng-model="selectedHoldings">
         <thead md-head md-order="sortOrder">
@@ -43,13 +43,13 @@
             <th md-column md-order-by="companyName"><span>Company</span></th>
             <th md-column md-order-by="asset"><span>Asset</span></th>
             <th md-column md-order-by="quantity" md-numeric>Shares QTY</th>
-            <th md-column md-order-by="currentPrice">Current Price</th>
-            <th md-column md-order-by="stressedPrice">Stressed Price</th>
+            <th md-column md-order-by="currentPrice" md-numeric>Current Price</th>
+            <th md-column md-order-by="stressedPrice" md-numeric>Stressed Price</th>
             <th md-column md-order-by="profitLoss" md-numeric>Profit/Loss</th>
           </tr>
         </thead>
         <tbody md-body>
-          <tr md-row md-auto-select ng-repeat="holding in simulationResults | orderBy:sortOrder">
+          <tr md-row md-auto-select ng-repeat="holding in simulationResults.holdings | orderBy:sortOrder">
             <td md-cell>{{holding.companyName}}</td>
             <td md-cell>{{holding.asset}}</td>
             <td md-cell>{{holding.quantity | number: 0}}</td>
@@ -58,6 +58,17 @@
             <td md-cell><span ng-class='{"number-positive": holding.profitLoss >= 0, "number-negative": holding.profitLoss < 0}'>{{holding.profitLoss | number: 3}}</span></td>
           </tr>
         </tbody>
+        <tfoot md-foot>
+          <tr md-row>
+            <td md-cell><span></span></td>
+            <td md-cell><span class="total-portfolio">Portfolio Total</span></td>
+            <td md-cell><span></span></td>
+            <td md-cell><span></span></td>
+            <td md-cell md-numeric><span class="total-currentPrice">{{simulationResults.currentPrice}} USD</span></td>
+            <td md-cell md-numeric><span class="total-stressedPrice">{{simulationResults.stressedPrice}} USD</span></td>
+            <td md-cell md-numeric><span ng-class='{"number-positive": simulationResults.profitLoss >= 0, "number-negative": simulationResults.profitLoss < 0}' class="total-profitLoss">{{simulationResults.profitLoss | number:3}}</span></td>
+          </tr>
+        </tfoot>
       </table>
     </md-table-container>
   </div>
