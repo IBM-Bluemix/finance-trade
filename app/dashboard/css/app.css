@@ -12,6 +12,7 @@
  * TOOLBAR
  */
 .md-title {
+  white-space: nowrap;
 }
 
 .md-subtitle {

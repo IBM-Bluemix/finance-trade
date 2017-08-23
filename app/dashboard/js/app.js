@@ -32,11 +32,16 @@
     $urlRouterProvider.otherwise('/about');
   });
 
-  app.controller('SidebarController', ['$scope', 'StateService',
+  app.controller('AppController', ['$scope', 'StateService',
     function($scope, StateService) {
-      console.log('SidebarController()');
+      console.log('AppController()');
 
       $scope.state = StateService;
+      $scope.sidebarVisible = true;
+
+      $scope.toggleSidebar = function() {
+        $scope.sidebarVisible = !$scope.sidebarVisible;
+      }
     }]);
 
 })();
