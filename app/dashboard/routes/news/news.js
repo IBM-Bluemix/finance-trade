@@ -35,6 +35,8 @@
 
             StateService.set('news.riskFactor', $scope.selectedRiskFactor);
             StateService.set('news.horizon', $scope.selectedHorizon);
+            //PENDING(fredL) to be computed
+            StateService.set('news.shockValue', 1.5);
             StateService.set('news', articles);
           });
       };

@@ -89,3 +89,27 @@ md-toolbar {
 .article-sentiment-tag {
   color: white;
 }
+
+/**
+ * SIMULATION PAGE
+ */
+.number-positive {
+  color: #4bb60c;
+}
+
+.number-negative {
+  color: #de6b6b;
+}
+
+/**
+ * ALERT
+ */
+.alert-warning {
+  background-color: #de6b6b;
+  color: #ffffff;
+}
+
+.alert-info {
+  background-color: #47aad7;
+  color: #ffffff;
+}

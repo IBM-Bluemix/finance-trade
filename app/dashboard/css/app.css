@@ -97,6 +97,10 @@
   margin-bottom: 20px;
 }
 
+.page-body {
+  padding: 20px;
+}
+
 .page-header {
   border-bottom: 2px solid;
   padding-bottom: 20px;
@@ -104,4 +108,12 @@
 
 .page-title {
   font-size: 30px;
+}
+
+/**
+ * ALERT
+ */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
 }
