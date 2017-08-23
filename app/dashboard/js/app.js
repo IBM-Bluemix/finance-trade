@@ -28,12 +28,36 @@
     'md.data.table',
   ]);
 
+  app.directive('prism', ['$compile', function($compile) {
+    return {
+      restrict: 'A',
+      transclude: true,
+      scope: {
+        source: '@'
+      },
+      link: function(scope, element, attrs, controller, transclude) {
+        scope.$watch('source', function(v) {
+          element.find('code').html(v);
+          Prism.highlightElement(element.find('code')[0]);
+        });
+
+        transclude(function(clone) {
+          if (clone.html() !== undefined) {
+            element.find("code").html(clone.html());
+            $compile(element.contents())(scope.$parent);
+          }
+        });
+      },
+      template: '<code></code>'
+    };
+  }]);
+
   app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/about');
   });
 
-  app.controller('AppController', ['$scope', 'StateService',
-    function($scope, StateService) {
+  app.controller('AppController', ['$scope', '$mdDialog', 'StateService',
+    function($scope, $mdDialog, StateService) {
       console.log('AppController()');
 
       $scope.state = StateService;
@@ -42,6 +66,26 @@
       $scope.toggleSidebar = function() {
         $scope.sidebarVisible = !$scope.sidebarVisible;
       }
+
+      $scope.viewJSON = function(ev, targetObject) {
+        $mdDialog.show({
+          controller: DialogController,
+          templateUrl: 'templates/viewJSON.tmpl.html',
+          parent: angular.element(document.body),
+          clickOutsideToClose:true,
+          targetEvent: ev,
+          fullscreen: true,
+          locals: { source: targetObject }
+        });
+      }
+
+      function DialogController($scope, $mdDialog, source) {
+        $scope.source = source;
+        $scope.hide = function() {
+          $mdDialog.cancel();
+        };
+      }
+
     }]);
 
 })();
