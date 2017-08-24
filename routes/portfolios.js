@@ -26,7 +26,7 @@ router.get('/api/v1/portfolios', (req, res) => {
   request(getPortfoliosRequest)
     // get existing portfolios
     .then((result) => {
-      if (result.portfolios && result.portfolios.length > 10) {
+      if (result.portfolios && result.portfolios.length > 0) {
         console.log('Found', result);
         res.send(result);
         throw new Error('processed');
@@ -89,7 +89,7 @@ router.get('/api/v1/portfolios/:portfolioname/holdings', (req, res) => {
   request(getHoldingsRequest)
     // get existing holdings
     .then((result) => {
-      if (result.holdings && result.holdings.length > 10) {
+      if (result.holdings && result.holdings.length > 0) {
         console.log('Found', result);
         res.send(result);
         throw new Error('processed');
