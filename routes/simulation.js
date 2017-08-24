@@ -1,8 +1,6 @@
 var express = require('express');
-var path = require('path');
 var async = require('async');
 var request = require('request');
-var fs = require('fs');
 
 var router = express.Router();
 var SimulatedCredentials;
