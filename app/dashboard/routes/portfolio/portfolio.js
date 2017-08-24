@@ -12,22 +12,11 @@
   app.controller('PortfolioController', ['$scope', '$state', '$stateParams', 'PortfolioService', 'StateService',
     function($scope, $state, $stateParams, PortfolioService, StateService) {
       console.log('PortfolioController()');
-      var controller = this;
 
       $scope.selectedHoldings = [];
       $scope.portfolios = StateService.get('portfolios');
-
-      if (!$scope.portfolios) {
-        PortfolioService.getPortfolios().then(function(portfolios) {
-          console.log('Found', portfolios);
-          $scope.portfolios = portfolios;
-          if (portfolios.length > 0) {
-            $scope.selectPortfolio(portfolios[0]);
-          }
-          StateService.set('portfolios', portfolios);
-        });
-      }
-
+      $scope.selectedPortfolio = StateService.get('portfolios.selected');
+      
       $scope.selectPortfolio = function(portfolio) {
         if (portfolio === $scope.selectedPortfolio) {
           return;
@@ -44,6 +33,23 @@
           });
         }
       };
+
+      if (!$scope.portfolios) {
+        PortfolioService.getPortfolios().then(function(portfolios) {
+          console.log('Found', portfolios);
+          $scope.portfolios = portfolios;
+          if (portfolios.length > 0) {
+            $scope.selectPortfolio(portfolios[0]);
+          }
+          StateService.set('portfolios', portfolios);
+        });
+      } else if ($scope.selectedPortfolio) {
+        $scope.selectedPortfolioIndex =
+          $scope.portfolios.findIndex(function(item) {
+            return item.name === $scope.selectedPortfolio.name;
+          });
+        $scope.selectPortfolio($scope.portfolios[$scope.selectedPortfolioIndex]);
+      }
 
     }]);
 

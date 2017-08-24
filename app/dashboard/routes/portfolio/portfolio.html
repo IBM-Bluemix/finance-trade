@@ -11,7 +11,7 @@
   </div>
 
   <div class="page-body" md-whiteframe="4">
-    <md-tabs>
+    <md-tabs md-selected="selectedPortfolioIndex">
       <md-tab label="{{portfolio.name}}"
         ng-repeat="portfolio in portfolios"
         md-on-select="selectPortfolio(portfolio)">
