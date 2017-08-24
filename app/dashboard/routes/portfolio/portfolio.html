@@ -10,7 +10,11 @@
     They are maintained by the <a href="https://console.bluemix.net/catalog/services/fss-portfolio-service" target="_blank">Investment Portfolio</a> service.
   </div>
 
-  <div class="page-body" md-whiteframe="4">
+  <div class="page-body" md-whiteframe="4" ng-if="portfolios.length === 0">
+    No portfolio found
+  </div>
+
+  <div class="page-body" md-whiteframe="4" ng-if="portfolios.length > 0">
     <md-tabs md-selected="selectedPortfolioIndex">
       <md-tab label="{{portfolio.name}}"
         ng-repeat="portfolio in portfolios"
