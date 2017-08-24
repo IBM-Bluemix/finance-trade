@@ -8,11 +8,15 @@
     return {
       simulate: function(instrumentIds, riskFactor, shockValue) {
         var deferred = $q.defer();
-        $http.get('api/simulation.json').then(function(response) {
+        $http.post('/api/v1/simulation', {
+          instrumentIds: instrumentIds,
+          riskFactor: riskFactor,
+          shockValue: shockValue,
+        }).then(function(response) {
           deferred.resolve(response.data);
         }).catch(function(err) {
           console.log(err);
-          deferred.reject();
+          deferred.reject(err);
         });
         return deferred.promise;
       }

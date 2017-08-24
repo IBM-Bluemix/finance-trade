@@ -96,8 +96,14 @@ app.use(require('./routes/portfolios.js')({
   userid: INVESTMENT_PORFOLIO_USERNAME || process.env.INVESTMENT_PORFOLIO_USERNAME,
   password: INVESTMENT_PORFOLIO_PASSWORD || process.env.INVESTMENT_PORFOLIO_PASSWORD,
 }));
-
 app.use(require('./routes/news.js')(discovery));
+app.use(require('./routes/simulation')({
+  uri: SCENARIO_INSTRUMENTS_URI || process.env.SIMULATED_INSTRUMENT_ANALYSIS_URI,
+  accessToken: SCENARIO_INSTRUMENTS_ACCESS_TOKEN || process.env.SIMULATED_INSTRUMENT_ANALYSIS_ACCESS_TOKEN
+}, {
+  uri: PREDICTIVE_MARKET_SCENARIOS_URI || process.env.PREDICTIVE_MARKET_SCENARIOS_URI,
+  accessToken: PREDICTIVE_MARKET_SCENARIOS_ACCESS_TOKEN || process.env.PREDICTIVE_MARKET_SCENARIOS_ACCESS_TOKEN
+}));
 
 //--Portfolios POST Methods - To Create single portfolios--------------------
 app.post('/api/portfolios', function(req, response){

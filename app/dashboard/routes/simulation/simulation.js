@@ -34,6 +34,9 @@
           return holding.instrumentId;
         });
 
+        $scope.simulationResults = null;
+        StateService.set('simulation', $scope.simulationResults);
+
         SimulationService.simulate(instrumentIds, riskFactor, shockValue).then(function(simulation) {
           console.log('Received simulation data', simulation);
 
@@ -74,6 +77,8 @@
 
           console.log('Prepared simulation results', $scope.simulationResults);
           StateService.set('simulation', $scope.simulationResults);
+        }).catch(function(err) {
+          console.log('Failed to run simulation', err);
         });
       };
     }]);

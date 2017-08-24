@@ -30,7 +30,7 @@
           deferred.resolve(response.data.portfolios);
         }).catch(function(err) {
           console.log(err);
-          deferred.reject();
+          deferred.reject(err);
         });
         return deferred.promise;
       },
@@ -42,7 +42,7 @@
           deferred.resolve(response.data.holdings[0].holdings);
         }).catch(function(err) {
           console.log(err);
-          deferred.reject();
+          deferred.reject(err);
         });
         return deferred.promise;
       },
