@@ -1,8 +1,8 @@
 var express = require('express');
-var router = express.Router();
 var request = require('request-promise');
 var fs = require('fs');
 
+var router = express.Router();
 var Credentials = {
   baseUrl: '',
   userid: '',
@@ -48,7 +48,7 @@ router.get('/api/v1/portfolios', (req, res) => {
         },
         json: true,
         body: defaultPortfolios
-      }
+      };
       console.log('No portfolio found. Injecting default...', defaultPortfolios);
       return request(postPortfoliosRequest);
     })
@@ -57,11 +57,9 @@ router.get('/api/v1/portfolios', (req, res) => {
       console.log('Created default portfolios', result);
     })
     // and query the portfolios again
-    .then(() => {
-      return request(getPortfoliosRequest).then((result) => {
-        res.send(result);
-      });
-    })
+    .then(() => request(getPortfoliosRequest).then((result) => {
+      res.send(result);
+    }))
     //
     .catch((err) => {
       if (err && err.message === 'processed') {
@@ -69,7 +67,7 @@ router.get('/api/v1/portfolios', (req, res) => {
       }
 
       console.log(err);
-      res.status(500).send({ok: false});
+      res.status(500).send({ ok: false });
     });
 });
 
@@ -112,7 +110,7 @@ router.get('/api/v1/portfolios/:portfolioname/holdings', (req, res) => {
         },
         json: true,
         body: defaultHoldings
-      }
+      };
       console.log('No holding found. Injecting default...', defaultHoldings);
       return request(postHoldingsRequest);
     })
@@ -121,11 +119,9 @@ router.get('/api/v1/portfolios/:portfolioname/holdings', (req, res) => {
       console.log('Created default holdings', result);
     })
     // and query the holdings again
-    .then(() => {
-      return request(getHoldingsRequest).then((result) => {
-        res.send(result);
-      });
-    })
+    .then(() => request(getHoldingsRequest).then((result) => {
+      res.send(result);
+    }))
     //
     .catch((err) => {
       if (err && err.message === 'processed') {
@@ -133,7 +129,7 @@ router.get('/api/v1/portfolios/:portfolioname/holdings', (req, res) => {
       }
 
       console.log(err);
-      res.status(500).send({ok: false});
+      res.status(500).send({ ok: false });
     });
 });
 
@@ -145,4 +141,4 @@ module.exports = (portfolioCredentials) => {
   Credentials = portfolioCredentials;
   console.log(Credentials);
   return router;
-}
+};
