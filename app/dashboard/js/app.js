@@ -28,6 +28,12 @@
     'md.data.table',
   ]);
 
+  app.config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('deep-orange')
+      .accentPalette('orange');
+  });
+
   app.directive('prism', ['$compile', function($compile) {
     return {
       restrict: 'A',

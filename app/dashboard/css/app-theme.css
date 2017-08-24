@@ -1,6 +1,6 @@
 body {
-  background-color: #f9fafc;
-  color: #919bb1;
+  background-color: #ffffff;
+  color: #394a52;
 }
 
 /**
@@ -19,43 +19,43 @@ body {
  * TOOLBAR
  */
 md-toolbar {
-  background-color: #9caab8 !important;
+  background-color: #1a3643 !important;
 }
 
 /**
  * SIDEBAR
  */
 .sidebar {
-  background-color: #f4f9fc;
-  color: #929cb4;
+  background-color: #1a3542;
+  color: #f1f2f3;
 }
 
 .sidebar-user-avatar {
-  color: #929cb4 !important;
+  color: #f1f2f3 !important;
 }
 
 .sidebar-item md-icon {
-  color: #929cb4 !important;
+  color: #f1f2f3 !important;
 }
 
 .sidebar-item a {
-  color: #929cb4;
+  color: #f1f2f3;
 }
 
 .sidebar-item > a.active md-icon,
 .sidebar-item > a.active {
-  background: #929cb4 !important;
-  color: #ffffff !important;
+  background: #ff5722 !important;
+  color: #f1f2f3 !important;
 }
 
 .badge {
-  background-color: #929cb4;
-  color: #ffffff;
+  background-color: #ff5722;
+  color: #f1f2f3;
 }
 
 .active > .badge {
-  background-color: #ffffff;
-  color: #929cb4;
+  background-color: #f1f2f3;
+  color: #ff5722;
 }
 
 /**
