@@ -24,7 +24,6 @@
     return {
       getPortfolios: function() {
         var deferred = $q.defer();
-        // $http.get('api/portfolios.json').then(function(response) {
         $http.get('/api/v1/portfolios').then(function(response) {
           console.log('Raw response', response);
           deferred.resolve(response.data.portfolios);
@@ -36,7 +35,6 @@
       },
       getHoldings: function(portfolio) {
         var deferred = $q.defer();
-        // $http.get('api/holdings.json').then(function(response) {
         $http.get(`/api/v1/portfolios/${encodeURIComponent(portfolio.name)}/holdings`).then(function(response) {
           console.log('Raw response', response);
           deferred.resolve(response.data.holdings[0].holdings);

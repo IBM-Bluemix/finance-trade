@@ -9,7 +9,6 @@
       findArticles: function(riskFactor, horizon) {
         console.log('Looking for', riskFactor, horizon);
         var deferred = $q.defer();
-        // $http.get('api/news.json').then(function(response) {
         $http.post(`/api/v1/news/${encodeURIComponent(riskFactor.search)}`,
           {
             company: riskFactor.search,
