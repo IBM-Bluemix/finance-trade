@@ -91,6 +91,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //app.use(upload.single());
 
+app.use(require('./routes/portfolios.js')({
+  baseUrl: INVESTMENT_PORFOLIO_BASE_URL || process.env.INVESTMENT_PORFOLIO_BASE_URL,
+  userid: INVESTMENT_PORFOLIO_USERNAME || process.env.INVESTMENT_PORFOLIO_USERNAME,
+  password: INVESTMENT_PORFOLIO_PASSWORD || process.env.INVESTMENT_PORFOLIO_PASSWORD,
+}));
+
 //--Portfolios POST Methods - To Create single portfolios--------------------
 app.post('/api/portfolios', function(req, response){
     //console.log("REQUEST:" + req.body.porfolioname);
@@ -278,7 +284,7 @@ app.get("/api/holdings/:portfolioname",function(request,response){
 
 //--Discovery News POST returning 20 results--------------------
 app.post("/api/news/:company", function (req, res) {
-    
+
     // Getting date from Angular radio buttons
     var getDay = req.body.daysDate;
     var newDate = Date.now('dd:mm:yyyy') + getDay *24*3600*1000; // days ago in milliseconds
@@ -299,12 +305,12 @@ app.post("/api/news/:company", function (req, res) {
             console.log(err);
         } else {
             //console.log(response);
-            
+
             // skip the loop for each news element where if host == gamezone and military
             var newResponse = [];
             response.results.forEach(function(item) {
                 //console.log(item);
-                if(item.host =="www.military.com" || item.host =="www.gamezone.com" || item.host =="barrons.com") {    
+                if(item.host =="www.military.com" || item.host =="www.gamezone.com" || item.host =="barrons.com") {
                     return;
                 }
                 newResponse.push(item);
@@ -340,7 +346,7 @@ app.get("/api/news", function (req, res) {
             // skip the loop for each news element where if host == gamezone and military
             var newResponse = [];
             response.results.forEach(function(item) {
-                if(item.host =="www.military.com" || item.host =="www.gamezone.com") {    
+                if(item.host =="www.military.com" || item.host =="www.gamezone.com") {
                     return;
                 }
                 newResponse.push(item);
@@ -382,7 +388,7 @@ app.post('/api/generatepredictive',function(request,response){
         res.on("end", function () {
             var body = Buffer.concat(chunks);
             response.send(toCSV(body.toString(),risk_factor,shock_value));
-            
+
         });
     });
     req.write(req_body);
@@ -455,10 +461,10 @@ function toCSV(datatowrite,riskfactor,shockvalue){
         if (err) {
             console.log(err);
             console.log('Some error occured - file either not saved or corrupted file saved.');
-        } 
+        }
         else {
             console.log('It\'s saved!');
-        }   
+        }
     });
 }
 
