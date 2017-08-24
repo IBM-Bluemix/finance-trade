@@ -2,7 +2,7 @@
   <div class="page-header" flex="none" layout="row">
     <span class="page-title">Portfolio</span>
     <span flex></span>
-    <md-button class="md-raised md-secondary" ng-click="viewJSON($event, portfolios)">View JSON</md-button>
+    <md-button class="md-raised md-secondary" ng-disabled="!portfolios" ng-click="viewJSON($event, portfolios)">View JSON</md-button>
   </div>
 
   <div class="page-description" flex="none">
