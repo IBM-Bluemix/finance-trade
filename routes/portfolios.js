@@ -139,6 +139,5 @@ function currentISOTimestamp() {
 
 module.exports = (portfolioCredentials) => {
   Credentials = portfolioCredentials;
-  console.log(Credentials);
   return router;
 };
