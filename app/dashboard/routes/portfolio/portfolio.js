@@ -16,7 +16,7 @@
       $scope.selectedHoldings = [];
       $scope.portfolios = StateService.get('portfolios');
       $scope.selectedPortfolio = StateService.get('portfolios.selected');
-      
+
       $scope.selectPortfolio = function(portfolio) {
         if (portfolio === $scope.selectedPortfolio) {
           return;
@@ -50,7 +50,5 @@
           });
         $scope.selectPortfolio($scope.portfolios[$scope.selectedPortfolioIndex]);
       }
-
     }]);
-
 })();

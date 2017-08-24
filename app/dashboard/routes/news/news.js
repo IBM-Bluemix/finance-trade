@@ -10,16 +10,14 @@
   });
 
   var horizons = [
-    { display: "24 hours", days: -1 },
-    { display: "48 hours", days: -2 },
-    { display: "7 days", days: -7 },
-    { display: "28 days", days: -28 },
+    { display: '24 hours', days: -1 },
+    { display: '48 hours', days: -2 },
+    { display: '7 days', days: -7 },
+    { display: '28 days', days: -28 },
   ];
 
   app.controller('NewsController', ['$scope', '$state', '$stateParams', 'PortfolioService', 'NewsService', 'StateService',
     function($scope, $state, $stateParams, PortfolioService, NewsService, StateService) {
-      var controller = this;
-
       $scope.availableRiskFactors = PortfolioService.getRiskFactors();
       $scope.horizons = horizons;
 
@@ -35,7 +33,6 @@
 
             StateService.set('news.riskFactor', $scope.selectedRiskFactor);
             StateService.set('news.horizon', $scope.selectedHorizon);
-            //PENDING(fredL) to be computed
             StateService.set('news.shockValue', articles.shockValue);
             StateService.set('news', articles);
           });

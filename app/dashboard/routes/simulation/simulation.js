@@ -11,28 +11,28 @@
 
   app.controller('SimulationController', ['$scope', '$state', '$stateParams', 'StateService', 'SimulationService',
     function($scope, $state, $stateParams, StateService, SimulationService) {
-      var controller = this;
-
       $scope.state = StateService;
       $scope.selectedHoldings = [];
       $scope.simulationResults = StateService.get('simulation');
 
       $scope.hasNews = function() {
-        var news =  StateService.get('news');
+        var news = StateService.get('news');
         return news && news.results && news.results.length > 0;
-      }
+      };
 
       $scope.hasPortfolio = function() {
         var portfolio = StateService.get('portfolios.selected');
         return portfolio && portfolio.holdings;
-      }
+      };
 
       $scope.runSimulation = function() {
         var portfolio = StateService.get('portfolios.selected');
         var riskFactor = StateService.get('news.riskFactor');
         var shockValue = StateService.get('news.shockValue');
 
-        var instrumentIds = portfolio.holdings.map(function(holding) { return holding.instrumentId; });
+        var instrumentIds = portfolio.holdings.map(function(holding) {
+          return holding.instrumentId;
+        });
 
         SimulationService.simulate(instrumentIds, riskFactor, shockValue).then(function(simulation) {
           console.log('Received simulation data', simulation);
@@ -75,7 +75,6 @@
           console.log('Prepared simulation results', $scope.simulationResults);
           StateService.set('simulation', $scope.simulationResults);
         });
-      }
+      };
     }]);
-
 })();
