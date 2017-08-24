@@ -28,7 +28,6 @@ router.post('/api/v1/simulation', (req, res) => {
         })
       };
       request(options, (err, response, body) => {
-        console.log(body);
         if (err) {
           callback(err);
         } else if (body.error) {
@@ -62,7 +61,6 @@ router.post('/api/v1/simulation', (req, res) => {
         json: true
       };
       request(options, (err, response, body) => {
-        console.log(err, body);
         if (err) {
           callback(err);
         } else if (body.error) {
