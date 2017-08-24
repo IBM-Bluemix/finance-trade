@@ -97,6 +97,8 @@ app.use(require('./routes/portfolios.js')({
   password: INVESTMENT_PORFOLIO_PASSWORD || process.env.INVESTMENT_PORFOLIO_PASSWORD,
 }));
 
+app.use(require('./routes/news.js')(discovery));
+
 //--Portfolios POST Methods - To Create single portfolios--------------------
 app.post('/api/portfolios', function(req, response){
     //console.log("REQUEST:" + req.body.porfolioname);
