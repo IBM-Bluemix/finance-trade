@@ -37,6 +37,12 @@
   </div>
 
   <div class="page-body" ng-if="simulationResults.holdings" md-whiteframe="4">
+
+    <md-tabs>
+      <md-tab label="{{simulationResults.portfolio.name}}">
+      </md-tab>
+    </md-tabs>
+
     <md-table-container>
       <table md-table md-row-select="true" ng-model="selectedHoldings">
         <thead md-head md-order="sortOrder">

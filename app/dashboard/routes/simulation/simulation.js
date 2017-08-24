@@ -51,6 +51,7 @@
 
           $scope.simulationResults = {}
 
+          $scope.simulationResults.portfolio = portfolio;
           $scope.simulationResults.holdings = portfolio.holdings.map(function(holding) {
             var result = JSON.parse(JSON.stringify(holding));
             result.currentPrice = instrumentIdToSimulation[result.instrumentId].currentPrice;
