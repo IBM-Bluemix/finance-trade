@@ -9,9 +9,9 @@
       findArticles: function(riskFactor, horizon) {
         console.log('Looking for', riskFactor, horizon);
         var deferred = $q.defer();
-        $http.post(`/api/v1/news/${encodeURIComponent(riskFactor.search)}`,
+        $http.post('/api/v1/news',
           {
-            company: riskFactor.search,
+            search: riskFactor.search,
             daysDate: horizon.days
           }).then(function(response) {
           deferred.resolve(response.data);

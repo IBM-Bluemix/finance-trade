@@ -4,7 +4,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
   visibility: hidden;
   z-index: 100;
 }
@@ -29,12 +28,7 @@
 }
 
 .md-button.group {
-  background-color: #dfdfdf;
   margin: 0;
-}
-
-.md-button.selected {
-  background-color: #5555ff;
 }
 
 .md-button.groupFirst {
