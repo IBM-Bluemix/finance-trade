@@ -21,6 +21,13 @@
   height: 16px;
 }
 
+@media screen and (max-width: 600px) {
+  .md-subtitle {
+    font-size: 10px;
+    height: 10px;
+  }
+}
+
 .md-button.group {
   background-color: #dfdfdf;
   margin: 0;
@@ -47,10 +54,11 @@
   min-width: 250px;
   font-size: 18px;
   overflow: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .sidebar-user {
-  padding-top: 20px;
   margin-bottom: 40px;
 }
 
